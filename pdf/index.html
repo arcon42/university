@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Экспорт отформатированного текста в PDF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home"><span class="brand-mark">PDF</span><span>LibreOffice Writer</span></a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#about">О PDF</a><a href="#steps">Экспорт</a><a href="#check">Проверка</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Учебный материал</p>
+          <h1>Экспорт отформатированного текста <span>в PDF</span></h1>
+          <p class="hero-description">Как сохранить документ из LibreOffice Writer, чтобы оформление оставалось
+            аккуратным при просмотре, отправке и печати.</p>
+          <a class="button button-primary" href="#steps">Посмотреть инструкцию <span>→</span></a>
+        </div>
+        <div class="document-illustration" aria-label="Иллюстрация PDF-документа">
+          <div class="paper">
+            <div class="paper-fold"></div>
+            <div class="pdf-label">PDF</div>
+            <div class="paper-line line-long"></div>
+            <div class="paper-line"></div>
+            <div class="paper-line line-short"></div>
+            <div class="paper-line line-long"></div>
+            <div class="paper-line"></div>
+            <div class="paper-line line-medium"></div>
+          </div>
+          <div class="export-arrow">↓</div>
+          <div class="file-caption">Готовый документ</div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">01 / Определение</p>
+          <h2>Что такое экспорт в PDF?</h2>
+          <p>Экспорт — это сохранение документа в другом формате с сохранением его внешнего вида.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="card-number">01</span>
+            <h3>Сохранение оформления</h3>
+            <p>Заголовки, шрифты, таблицы, изображения и расположение элементов сохраняются в готовом файле.</p>
+          </article>
+          <article class="feature-card"><span class="card-number">02</span>
+            <h3>Совместимость</h3>
+            <p>PDF можно открывать на разных устройствах, даже если на них не установлен Writer.</p>
+          </article>
+          <article class="feature-card"><span class="card-number">03</span>
+            <h3>Удобная печать</h3>
+            <p>Формат подходит для рефератов, докладов, инструкций и других учебных документов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-tinted" id="steps">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">02 / Инструкция</p>
+          <h2>Как экспортировать документ</h2>
+          <p>Выполните эти действия в LibreOffice Writer.</p>
+        </div>
+        <ol class="steps-list">
+          <li class="step"><span class="step-number">1</span>
+            <div>
+              <h3>Подготовьте текст</h3>
+              <p>Проверьте заголовки, размер шрифта, интервалы, поля страницы, таблицы и изображения.</p>
+            </div>
+          </li>
+          <li class="step"><span class="step-number">2</span>
+            <div>
+              <h3>Откройте меню «Файл»</h3>
+              <p>Выберите <strong>Файл → Экспортировать как → Экспортировать в PDF</strong>.</p>
+            </div>
+          </li>
+          <li class="step"><span class="step-number">3</span>
+            <div>
+              <h3>Настройте параметры</h3>
+              <p>При необходимости задайте диапазон страниц, качество изображений и другие параметры экспорта.</p>
+            </div>
+          </li>
+          <li class="step"><span class="step-number">4</span>
+            <div>
+              <h3>Сохраните PDF</h3>
+              <p>Нажмите «Экспорт», укажите имя файла и папку, затем подтвердите сохранение.</p>
+            </div>
+          </li>
+        </ol>
+        <video width="1120" height="720" controls>
+          <source src="./video.mp4" type="video/mp4">
+          <source src="movie.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </section>
+    <section class="section" id="check">
+      <div class="container checklist-layout">
+        <div>
+          <p class="eyebrow">03 / Контроль качества</p>
+          <h2>Проверьте готовый файл</h2>
+          <p class="check-description">Откройте PDF после экспорта и убедитесь, что документ выглядит правильно.</p>
+          <div class="tip-box"><strong>Полезный совет</strong>
+            <p>Сохраняйте исходный файл в формате ODT, если документ может понадобиться для дальнейшего редактирования.
+            </p>
+          </div>
+        </div>
+        <div class="checklist-card">
+          <h3>Контрольный список</h3>
+          <label class="check-item"><input type="checkbox"> Текст и символы отображаются корректно</label>
+          <label class="check-item"><input type="checkbox"> Заголовки и таблицы не смещены</label>
+          <label class="check-item"><input type="checkbox"> Изображения не обрезаны</label>
+          <label class="check-item"><input type="checkbox"> Нумерация страниц правильная</label>
+          <label class="check-item"><input type="checkbox"> Нет лишних пустых страниц</label>
+        </div>
+        <div class="checklist__images">
+          <img src="./1.png" alt="">
+          <img src="./2.jpg" alt="">
+          <img src="./3.jpg" alt="">
+          <img src="./4.jpg" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="conclusion">
+      <div class="container conclusion-inner">
+        <p class="eyebrow">Итог</p>
+        <h2>PDF сохраняет оформление и упрощает обмен документами.</h2>
+        <p>Подготовьте текст, экспортируйте его в PDF и обязательно проверьте результат.</p>
+        <a class="button button-light" href="#home">Вернуться наверх ↑</a>
+
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner"><span>Учебный материал: LibreOffice Writer</span><span>Экспорт
+        отформатированного текста в PDF</span></div>
+  </footer>
+</body>
+
+</html>

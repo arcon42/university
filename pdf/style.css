@@ -1,0 +1,560 @@
+/* 1. Переменные и базовые стили */
+:root {
+  --navy: #172744;
+  --blue: #2f67bd;
+  --cyan: #38c2cd;
+  --text: #27364d;
+  --muted: #687891;
+  --soft: #f1f6fc;
+  --border: #dfe8f3;
+  --radius: 18px;
+  --shadow: 0 14px 36px rgba(23, 39, 68, .08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #fff;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--navy);
+  line-height: 1.15;
+}
+
+h1 {
+  max-width: 720px;
+  margin-bottom: 22px;
+  font-size: clamp(2.4rem, 5vw, 4.3rem);
+  letter-spacing: -.045em;
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  letter-spacing: -.035em;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.18rem;
+}
+
+p {
+  color: var(--muted);
+}
+
+.eyebrow {
+  margin-bottom: 14px;
+  color: var(--blue);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+/* 2. Шапка и навигация */
+.site-header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background: rgba(255, 255, 255, .94);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.header-inner,
+.brand,
+.main-nav,
+.footer-inner {
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  min-height: 76px;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  gap: 12px;
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.brand-mark {
+  display: grid;
+  width: 46px;
+  height: 36px;
+  place-items: center;
+  color: white;
+  background: var(--blue);
+  border-radius: 9px;
+  font-size: .85rem;
+}
+
+.main-nav {
+  gap: 30px;
+  color: var(--muted);
+  font-size: .92rem;
+  font-weight: 650;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: var(--blue);
+}
+
+/* 3. Первый экран */
+.hero {
+  overflow: hidden;
+  background: radial-gradient(circle at 85% 25%, rgba(56, 194, 205, .18), transparent 25%), linear-gradient(135deg, #f4f8ff, #fff 70%);
+}
+
+.hero-grid {
+  display: grid;
+  min-height: 560px;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 60px;
+  padding-block: 70px;
+}
+
+.hero-copy span {
+  color: var(--blue);
+}
+
+.hero-description {
+  max-width: 620px;
+  margin-bottom: 30px;
+  font-size: 1.12rem;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 750;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: white;
+  background: var(--blue);
+  box-shadow: 0 8px 20px rgba(47, 103, 189, .22);
+}
+
+.document-illustration {
+  position: relative;
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  border-radius: 32px;
+  background: linear-gradient(145deg, #e5efff, #d7f5f5);
+}
+
+.paper {
+  position: relative;
+  width: 210px;
+  min-height: 265px;
+  padding: 42px 28px 25px;
+  background: white;
+  border: 1px solid #e0e8f2;
+  border-radius: 12px;
+  box-shadow: 0 24px 55px rgba(23, 39, 68, .18);
+  transform: rotate(4deg);
+}
+
+.paper-fold {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(225deg, #dce8f7 50%, #f4f8ff 50%);
+  border-bottom-left-radius: 8px;
+}
+
+.pdf-label {
+  margin-bottom: 25px;
+  color: var(--blue);
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.paper-line {
+  height: 6px;
+  margin-bottom: 12px;
+  background: #d9e3f0;
+  border-radius: 8px;
+}
+
+.line-long {
+  width: 100%;
+}
+
+.line-medium {
+  width: 76%;
+}
+
+.line-short {
+  width: 55%;
+}
+
+.export-arrow {
+  position: absolute;
+  right: 18%;
+  bottom: 22%;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  color: white;
+  background: var(--cyan);
+  border: 5px solid #e8fbfb;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.file-caption {
+  position: absolute;
+  bottom: 24px;
+  left: 26px;
+  color: var(--navy);
+  font-size: .9rem;
+  font-weight: 750;
+}
+
+/* 4. Секции и карточки */
+.section {
+  padding-block: 96px;
+}
+
+.section-tinted {
+  background: var(--soft);
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 42px;
+}
+
+.section-heading>p:last-child {
+  margin-bottom: 0;
+  font-size: 1.05rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.feature-card {
+  min-height: 235px;
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card-number {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 25px;
+  place-items: center;
+  color: var(--blue);
+  background: #eaf1ff;
+  border-radius: 12px;
+  font-size: .85rem;
+  font-weight: 850;
+}
+
+.feature-card p {
+  margin-bottom: 0;
+  font-size: .96rem;
+}
+
+/* 5. Пошаговая инструкция */
+.steps-list {
+  display: grid;
+  max-width: 850px;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 20px;
+  padding: 24px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.step-number {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  color: white;
+  background: var(--blue);
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 850;
+}
+
+.step h3 {
+  margin-bottom: 7px;
+}
+
+.step p {
+  margin-bottom: 0;
+}
+
+.step strong {
+  color: var(--navy);
+}
+
+/* 6. Проверочный список */
+.checklist-layout {
+  display: grid;
+  align-items: start;
+  gap: 70px;
+}
+
+.check-description {
+  max-width: 470px;
+}
+
+.tip-box {
+  margin-top: 28px;
+  padding: 20px 22px;
+  background: #eaf8f8;
+  border-left: 4px solid var(--cyan);
+  border-radius: 0 12px 12px 0;
+}
+
+.tip-box strong {
+  color: var(--navy);
+}
+
+.tip-box p {
+  margin: 6px 0 0;
+  font-size: .94rem;
+}
+
+.checklist-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.checklist-card h3 {
+  margin-bottom: 22px;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-block: 13px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.check-item:last-child {
+  border-bottom: 0;
+}
+
+.check-item input {
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  accent-color: var(--blue);
+  flex: 0 0 auto;
+}
+
+/* 7. Заключение и подвал */
+.conclusion {
+  padding-block: 78px;
+  color: white;
+  background: var(--navy);
+}
+
+.conclusion-inner {
+  max-width: 850px;
+}
+
+.conclusion h2 {
+  max-width: 800px;
+  color: white;
+}
+
+.conclusion p:not(.eyebrow) {
+  max-width: 650px;
+  margin-bottom: 26px;
+  color: #d4deee;
+}
+
+.conclusion .eyebrow {
+  color: var(--cyan);
+}
+
+.button-light {
+  color: var(--navy);
+  background: white;
+}
+
+.site-footer {
+  padding-block: 22px;
+  background: #101d33;
+}
+
+.footer-inner {
+  justify-content: space-between;
+  gap: 20px;
+  color: #b7c4d8;
+  font-size: .82rem;
+}
+
+/* 8. Адаптивность */
+@media (max-width: 800px) {
+  .hero-grid {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-block: 55px;
+  }
+
+  .document-illustration {
+    min-height: 330px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: auto;
+  }
+
+  .checklist-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .section {
+    padding-block: 68px;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .header-inner {
+    min-height: 68px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding-block: 12px;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: .82rem;
+  }
+
+  h1 {
+    font-size: 2.45rem;
+  }
+
+  .step {
+    grid-template-columns: 42px 1fr;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+  }
+
+  .checklist-card {
+    padding: 22px;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+video {
+  max-width: 1120px;
+  width: 100%;
+}
+
+.checklist__images {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+.checklist__images img {
+  width: 100%;
+  max-width: 700px;
+  gap: 30px;
+}
